@@ -4,7 +4,11 @@ go 1.20
 
 require (
 	github.com/fatih/color v1.16.0
+	github.com/go-ozzo/ozzo-dbx v1.5.0
+	github.com/go-sql-driver/mysql v1.4.1
 	github.com/labstack/echo/v4 v4.11.3
+	github.com/lib/pq v1.10.9
+	github.com/mattn/go-sqlite3 v1.14.18
 	github.com/spf13/cobra v1.8.0
 )
 
@@ -22,4 +26,5 @@ require (
 	golang.org/x/sys v0.14.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
+	google.golang.org/appengine v1.6.5 // indirect
 )

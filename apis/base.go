@@ -17,10 +17,13 @@ func InitApp(app *core.App) (*echo.Echo, error) {
 
 	bindUi(app, e)
 
+	api := e.Group("/api")
+	bindAdminApi(*app, api)
+
 	return e, nil
 }
 
-func bindUi(app core.App, e *echo.Echo) {
+func bindUi(app *core.App, e *echo.Echo) {
 	e.GET(trailedAdminPath+"*",
 		echo.StaticDirectoryHandler(ui.DistDirFS, false),
 		uiCacheMiddleware(),

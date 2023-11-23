@@ -36,7 +36,7 @@ func NewServeCommand(app *core.App) *cobra.Command {
 		},
 	}
 
-	command.PersistentFlags().StringVar(
+	command.LocalFlags().StringVar(
 		&httpAddr,
 		"http",
 		"",
