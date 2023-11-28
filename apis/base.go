@@ -19,6 +19,7 @@ func InitApp(app *core.App) (*echo.Echo, error) {
 
 	api := e.Group("/api")
 	bindAdminApi(*app, api)
+	bindProjectsApi(*app, api)
 
 	return e, nil
 }

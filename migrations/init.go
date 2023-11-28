@@ -4,7 +4,7 @@ import (
 	"github.com/camarin24/go-studio/core"
 )
 
-func Migrate(app core.App) {
+func Migrate(app *core.App) {
 	if _, err := app.DB().NewQuery(`
 		CREATE TABLE IF NOT EXISTS projects (
 			id TEXT PRIMARY KEY NOT NULL,

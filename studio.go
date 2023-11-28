@@ -16,7 +16,7 @@ type GoStudio struct {
 
 func NewWithConfig() *GoStudio {
 	return &GoStudio{
-		App: core.NewBaseApp(),
+		App: *core.NewApp(),
 		cmd: &cobra.Command{
 			Use:     filepath.Base(os.Args[0]),
 			Short:   "Go Studio CLI",

@@ -19,7 +19,7 @@ func Server(app *core.App, config ServerConfig) error {
 		config.AllowedOrigins = []string{"*"}
 	}
 
-	migrations.Migrate(*app)
+	migrations.Migrate(app)
 
 	server, err := InitApp(app)
 	if err != nil {

@@ -5,17 +5,19 @@ import (
 
 	"github.com/camarin24/go-studio/core"
 	"github.com/camarin24/go-studio/core/database"
+	"github.com/camarin24/go-studio/services"
 	"github.com/camarin24/go-studio/types"
 	"github.com/camarin24/go-studio/utils"
 	"github.com/labstack/echo/v4"
 )
 
 type AdminApi struct {
-	app core.App
+	app     core.App
+	service services.Service
 }
 
 func bindAdminApi(app core.App, e *echo.Group) {
-	api := &AdminApi{app}
+	api := &AdminApi{app, *services.NewService(app.DB(), app.Log())}
 	subGroup := e.Group("/admin")
 	subGroup.GET("", api.testApi)
 	subGroup.POST("/ping", api.ping)
